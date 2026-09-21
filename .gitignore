@@ -1,0 +1,14 @@
+# IDE and build output
+.idea/
+*.iml
+out/
+
+# Libraries are downloaded, not committed (see README)
+lib/
+
+# OS files
+.DS_Store
+
+# Connection settings and cookies live in your home folder, but just in case:
+connection.properties
+*.dat

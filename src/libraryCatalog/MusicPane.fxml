@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox managed="false" spacing="8.0" visible="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="libraryCatalog.MusicController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <Label text="Search by:" />
+            <ComboBox fx:id="searchFieldCombo" prefWidth="140.0" />
+            <TextField fx:id="searchTextField" onAction="#searchMusic" prefWidth="200.0" promptText="Search term" />
+            <Button onAction="#searchMusic" text="Search" />
+            <Button onAction="#showAllMusic" text="Show All" />
+            <Button fx:id="searchWebButton" managed="false" onAction="#searchWeb" text="Not found - Search the Web" visible="false" />
+         </children>
+      </HBox>
+      <TableView fx:id="musicTableView" VBox.vgrow="ALWAYS">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="albumColumn" prefWidth="150.0" text="Album" />
+            <TableColumn fx:id="artistColumn" prefWidth="130.0" text="Artist" />
+            <TableColumn fx:id="genreColumn" prefWidth="100.0" text="Genre" />
+            <TableColumn fx:id="labelColumn" prefWidth="120.0" text="Record Label" />
+            <TableColumn fx:id="onHandColumn" prefWidth="60.0" text="On Hand" />
+            <TableColumn fx:id="vinylColumn" prefWidth="55.0" text="Vinyl" />
+            <TableColumn fx:id="cdColumn" prefWidth="40.0" text="CD" />
+            <TableColumn fx:id="cassetteColumn" prefWidth="70.0" text="Cassette" />
+            <TableColumn fx:id="eightTrackColumn" prefWidth="75.0" text="8-Track" />
+            <TableColumn fx:id="locationColumn" prefWidth="90.0" text="Location" />
+            <TableColumn fx:id="conditionColumn" prefWidth="80.0" text="Condition" />
+            <TableColumn fx:id="valueColumn" prefWidth="60.0" text="Value" />
+         </columns>
+      </TableView>
+      <HBox spacing="8.0">
+         <children>
+            <TextField fx:id="albumField" promptText="Album" />
+            <TextField fx:id="artistField" promptText="Artist" />
+            <TextField fx:id="genreField" promptText="Genre" />
+            <TextField fx:id="labelField" promptText="Record Label" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <TextField fx:id="onHandField" prefWidth="70.0" promptText="On Hand" />
+            <TextField fx:id="locationField" promptText="Location" />
+            <TextField fx:id="conditionField" promptText="Condition" />
+            <TextField fx:id="valueField" prefWidth="70.0" promptText="Value" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="14.0">
+         <children>
+            <Label text="Format:" />
+            <CheckBox fx:id="vinylCheck" text="Vinyl" />
+            <CheckBox fx:id="cdCheck" text="CD" />
+            <CheckBox fx:id="cassetteCheck" text="Cassette" />
+            <CheckBox fx:id="eightTrackCheck" text="8-Track" />
+         </children>
+      </HBox>
+      <HBox spacing="8.0">
+         <children>
+            <Button onAction="#addAlbum" text="Add Album" />
+            <Button onAction="#deleteAlbum" text="Delete Selected" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

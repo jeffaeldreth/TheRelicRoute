@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox managed="false" spacing="8.0" visible="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="libraryCatalog.MoviesController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <Label text="Search by:" />
+            <ComboBox fx:id="searchFieldCombo" prefWidth="140.0" />
+            <TextField fx:id="searchTextField" onAction="#searchMovies" prefWidth="200.0" promptText="Search term" />
+            <Button onAction="#searchMovies" text="Search" />
+            <Button onAction="#showAllMovies" text="Show All" />
+            <Button fx:id="searchWebButton" managed="false" onAction="#searchWeb" text="Not found - Search the Web" visible="false" />
+         </children>
+      </HBox>
+      <TableView fx:id="moviesTableView" VBox.vgrow="ALWAYS">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="titleColumn" prefWidth="130.0" text="Title" />
+            <TableColumn fx:id="directorColumn" prefWidth="100.0" text="Director" />
+            <TableColumn fx:id="actorsColumn" prefWidth="130.0" text="Leading Actors" />
+            <TableColumn fx:id="genreColumn" prefWidth="90.0" text="Genre" />
+            <TableColumn fx:id="ratingColumn" prefWidth="55.0" text="Rating" />
+            <TableColumn fx:id="runTimeColumn" prefWidth="65.0" text="Run Time" />
+            <TableColumn fx:id="onHandColumn" prefWidth="60.0" text="On Hand" />
+            <TableColumn fx:id="dvdColumn" prefWidth="45.0" text="DVD" />
+            <TableColumn fx:id="blurayColumn" prefWidth="60.0" text="Blu-ray" />
+            <TableColumn fx:id="uhdColumn" prefWidth="40.0" text="4K" />
+            <TableColumn fx:id="vhsColumn" prefWidth="45.0" text="VHS" />
+            <TableColumn fx:id="locationColumn" prefWidth="90.0" text="Location" />
+            <TableColumn fx:id="conditionColumn" prefWidth="80.0" text="Condition" />
+            <TableColumn fx:id="valueColumn" prefWidth="60.0" text="Value" />
+         </columns>
+      </TableView>
+      <HBox spacing="8.0">
+         <children>
+            <TextField fx:id="titleField" promptText="Title" />
+            <TextField fx:id="directorField" promptText="Director" />
+            <TextField fx:id="actorsField" prefWidth="260.0" promptText="Leading Actors" />
+            <TextField fx:id="genreField" promptText="Genre" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <ComboBox fx:id="ratingCombo" prefWidth="100.0" promptText="Rating" />
+            <TextField fx:id="runTimeField" prefWidth="90.0" promptText="Run Time (min)" />
+            <TextField fx:id="onHandField" prefWidth="70.0" promptText="On Hand" />
+            <TextField fx:id="locationField" promptText="Location" />
+            <TextField fx:id="conditionField" promptText="Condition" />
+            <TextField fx:id="valueField" prefWidth="70.0" promptText="Value" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="14.0">
+         <children>
+            <Label text="Format:" />
+            <CheckBox fx:id="dvdCheck" text="DVD" />
+            <CheckBox fx:id="blurayCheck" text="Blu-ray" />
+            <CheckBox fx:id="uhdCheck" text="4K" />
+            <CheckBox fx:id="vhsCheck" text="VHS" />
+         </children>
+      </HBox>
+      <HBox spacing="8.0">
+         <children>
+            <Button onAction="#addMovie" text="Add Movie" />
+            <Button onAction="#deleteMovie" text="Delete Selected" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

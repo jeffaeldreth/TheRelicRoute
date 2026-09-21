@@ -1,0 +1,52 @@
+#myAnchorPane {
+    -fx-background-color: #181818;
+}
+
+#urlTextField {
+    -fx-background-color: #262626;
+    -fx-text-fill: #eaeaea;
+    -fx-border-color: #adc2fc;
+    -fx-border-width: 1;
+}
+
+.button {
+    -fx-background-color: #181818;
+    -fx-text-fill: #eaeaea;
+    -fx-border-color: #adc2fc;
+    -fx-border-width: 1;
+}
+
+.button:hover {
+    -fx-background-color: derive(#181818, 20%);
+}
+
+.button:armed {
+    -fx-background-color: derive(#181818, -20%);
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #181818;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #181818;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #262626;
+    -fx-border-color: #adc2fc;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #181818;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #eaeaea;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #adc2fc;
+}
+
+
